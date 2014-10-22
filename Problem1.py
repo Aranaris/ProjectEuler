@@ -8,4 +8,4 @@ for i in range (1, 1000):
 		x += i
 
 #print (list1)
-print (x)
+print(x)
