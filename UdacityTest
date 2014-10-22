@@ -1,0 +1,2 @@
+s = "cat dog wolf"
+print s.find("dog")
