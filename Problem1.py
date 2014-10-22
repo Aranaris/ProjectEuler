@@ -2,10 +2,10 @@
 
 #Problem 1: Multiples of 3 and 5
 
-list1 = []
+x = 0
 for i in range (1, 1000):
 	if i % 3 == 0 or i % 5 == 0:
-		list1.append(i)
+		x += i
 
 #print (list1)
-print (sum(list1))
+print (x)
