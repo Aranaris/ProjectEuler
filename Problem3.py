@@ -10,9 +10,12 @@ def prime_factors(n):
 	while i <= n:
 		if n % i == 0: 
 			factors = [i]
-			factors.append(prime_factors(n // i))
+			factors += prime_factors(n // i)
 			return factors
 		i += 1
+	if n != 1:	
+		return [n]
+	return []
 
 a = prime_factors(y)
 print(a)
