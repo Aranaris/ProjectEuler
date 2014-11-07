@@ -7,15 +7,13 @@ y = 600851475143
 
 def prime_factors(n):
 	i = 2
-	while i <= n:
+	while i < n:
 		if n % i == 0: 
-			factors = [i]
-			factors += prime_factors(n // i)
+			factors = set([i])
+			factors |= prime_factors(n // i)
 			return factors
 		i += 1
-	if n != 1:	
-		return [n]
-	return []
+	return set([n])
 
 a = prime_factors(y)
 print(a)
