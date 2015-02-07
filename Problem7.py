@@ -22,7 +22,6 @@ nth_prime = 0
 while nth_prime < input:
 	if len(prime_factors(test)) == 1:
 		nth_prime += 1
-		test = 
 	else:
 		test += 1
 

@@ -26,7 +26,7 @@ def square_of_sum(n): # square of (1 + 2 + ... + (n - 1) + n)
 
 
 x = int(sys.argv[1])
-x = int(sys.argv[1])
+
 print(square_of_sum(x) - sum_of_squares(x))
 
 
