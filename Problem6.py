@@ -9,20 +9,20 @@ import sys
 
 def sum_of_squares(n): # sum of 1^2 + 2^2 + ... (n - 1)^2 + n^2
 	i = 1
-	sum1 = 0
+	sum = 0
 	while i <= n:
-		sum1 += i ** 2
+		sum += i ** 2
 		i += 1
 	
-	return sum1
+	return sum
 	
 def square_of_sum(n): # square of (1 + 2 + ... + (n - 1) + n)
-	j = 1
-	sum2 = 0
-	while j <= n:
-		sum2 += j
-		j += 1
-	return sum2 ** 2
+	i = 1
+	sum = 0
+	while i <= n:
+		sum += i
+		i += 1
+	return sum ** 2
 
 
 x = int(sys.argv[1])

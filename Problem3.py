@@ -2,6 +2,7 @@
 
 #Problem 3: Largest prime factor
 
+
 y = 600851475143
 #y = 24
 
@@ -15,5 +16,4 @@ def prime_factors(n):
 		i += 1
 	return set([n])
 
-a = prime_factors(y)
-print(a)
+print(prime_factors(y))
