@@ -7,5 +7,5 @@ from SieveofEras import PrimeSieve
 
 
 p = PrimeSieve(1000000)
-p.markPrimes()
+#p.markPrimes()
 print(p.nthPrime(int(sys.argv[1])))

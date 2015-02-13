@@ -1,42 +1,25 @@
-
-# coding: utf-8
-
-# In[34]:
-
 import numpy as np
 
 class PrimeSieve:
-    def __init__(self, limit):
-        self.limit = np.ones(limit, dtype = int)
-    
-    def markPrimes(self):
-        for idx, val in enumerate(self.limit):
-            if idx < 2:
-                self.limit[idx] = 0
-            else:
-                for i in np.arange(2 * idx, len(self.limit), idx):
-                    self.limit[i] = 0
-              
-    def nthPrime(self, n):
-        i = 0
-        for idx, val in enumerate(self.limit):
-            if val == 1:
-                i += 1
-                if i == n:
-                    return idx
-        return "not found"
-            
+	def __init__(self, limit):
+		self.limit = np.ones(limit, dtype = int)
+		self.markPrimes()
 
+	def markPrimes(self):
+		self.limit[0], self.limit[1] = 0, 0
+		for i in range(2, int(len(self.limit) ** 0.5)):
+			for j in range(2, int(len(self.limit)/i)):
+				self.limit[j * i] = 0
+	
+	def isPrime(self, n):
+		if self.limit[n] == 1:
+			return True
 
-# In[38]:
-
-# p = PrimeSieve(1000000)
-# p.markPrimes()
-# a = p.limit
-# print(p.nthPrime(10001))
-
-
-# In[ ]:
-
-
-
+	def nthPrime(self, n):
+		i = 0
+		checknum = 0
+		while i < n:
+			checknum += 1
+			if self.isPrime(checknum):
+				i += 1
+		return checknum
