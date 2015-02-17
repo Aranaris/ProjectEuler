@@ -29,9 +29,9 @@ x = x.replace('\n', '')
 
 def maxseriesproducts(n, size):
     largestproduct = 0
-    for i in range(0, len(n) - (size - 1)): #iterate through x
+    for i in range(0, len(n) - (size - 1)):
         product = 1
-        for j in range(0, size): #determining the product
+        for j in range(0, size):
             product = product * int(n[i+j])
         if product > largestproduct:
             largestproduct = product
