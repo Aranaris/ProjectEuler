@@ -4,6 +4,7 @@
 
 import sys
 import math
+import functools
 
 def findtriplet(n):
     for i in range(1, int(n / 3)):
@@ -12,7 +13,4 @@ def findtriplet(n):
             if k.is_integer() and i + j + k == n: 
                 return [i, j, int(k)]
 
-product = 1
-for i in findtriplet(int(sys.argv[1])):
-	product *= i
-print (product)
+print (functools.reduce(lambda x, y: x * y, findtriplet(int(sys.argv[1]))))

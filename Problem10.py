@@ -5,7 +5,7 @@
 import sys
 from SieveofEras import PrimeSieve
 
-def sumPrimes(n):
+def sumprimes(n):
 	sum = 0
 	for i in range(len(n)):
 		if n[i] == 1:
@@ -13,4 +13,4 @@ def sumPrimes(n):
 	return sum
 	
 p = PrimeSieve(int(sys.argv[1]))
-print (sumPrimes(p.limit))
+print (sumprimes(p.limit))
