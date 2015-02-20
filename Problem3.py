@@ -3,8 +3,9 @@
 #Problem 3: Largest prime factor
 
 
-y = 600851475143
+#y = 600851475143
 #y = 24
+y = 28
 
 def prime_factors(n):
 	i = 2
