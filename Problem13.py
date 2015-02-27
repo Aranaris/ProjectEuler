@@ -101,14 +101,14 @@ x = """37107287533902102798797998220837590246510135740250
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690"""
 
-x = x.split('\n')
+print(reduce(lambda a, b: a + b, list(int(i) for i in x.split('\n'))))
 
-def largesum(lst, digits):
-    y = digits + len(lst) // 10 #relevant digits that will effect the result
-    digitsums = [0] * y
-    for i in range(len(lst)):
-        for j in range(y):
-            digitsums[j] += int(lst[i][j])
-    return reduce(lambda x, y: (x * 10) + y, digitsums)        
+# def largesum(lst, digits):
+    # y = digits + len(lst) // 10 #relevant digits that will effect the result
+    # digitsums = [0] * y
+    # for i in range(len(lst)):
+        # for j in range(y):
+            # digitsums[j] += int(lst[i][j])
+    # return reduce(lambda x, y: (x * 10) + y, digitsums)        
 
-print(largesum(x, 10))
+# print(largesum(x.split(), 10))
