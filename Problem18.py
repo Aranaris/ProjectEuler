@@ -23,14 +23,12 @@ test = """3
 2 4 6
 8 5 9 3"""
 
-cache = []
-
 def createpyramid(x):
     x =[row.split(" ")for row in x.split("\n")]
-    for i in range(len(x)):
-        for j in range(len(x[i])):
-            x[i][j] = int(x[i][j])
-    return x
+    pyramid = []
+    for row in x:
+	    pyramid.append([int(col) for col in row])
+    return pyramid
 
 def findpath(x, row = 0, col = 0):
     if row == len(x):
@@ -38,7 +36,7 @@ def findpath(x, row = 0, col = 0):
     start = x[row][col]
     first = findpath(x, row + 1, col)
     second = findpath(x, row + 1, col + 1)
-    return start + max([first, second])
+    return max([first, second])
 
 pyramid1 = createpyramid(test)
 print(findpath(pyramid1))
