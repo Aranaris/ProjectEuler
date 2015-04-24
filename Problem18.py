@@ -36,7 +36,7 @@ def findpath(x, row = 0, col = 0):
     start = x[row][col]
     first = findpath(x, row + 1, col)
     second = findpath(x, row + 1, col + 1)
-    return max([first, second])
+    return start + max([first, second])
 
 pyramid1 = createpyramid(test)
 print(findpath(pyramid1))
